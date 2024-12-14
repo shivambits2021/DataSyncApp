@@ -5,11 +5,14 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from fastapi import Depends
 from database_manager.models.models import Base
+from settings.settings import settings
 
+
+db_user = settings.DB_USER
+db_passwd = settings.DB_PASSWORD
 # Database URL (replace with your actual database URL)
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:Bits2019%40%21@localhost/icustom"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{db_user}:{db_passwd}@localhost/icustom"
 
-# Create a new SQLAlchemy engine
 # Create a new SQLAlchemy engine
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 

@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     CLIENT_ID :str
     CLIENT_SECRET: str
     REDIRECT_URI:str
+    
+    # Database cred
+    DB_USER :str
+    DB_PASSWORD :str
 
   
 settings = Settings()
